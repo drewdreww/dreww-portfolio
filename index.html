@@ -13,14 +13,20 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link href="styles.css" rel="stylesheet" />
+
+    <link href="css/variables.css" rel="stylesheet" />
+    <link href="css/base.css" rel="stylesheet" />
+    <link href="css/layout.css" rel="stylesheet" />
+    <link href="css/components.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+
     <title>Ralph Andrew | Portfolio</title>
   </head>
   <body>
     <header>
       <nav class="navbar">
         <div class="logo-container">
-          <a href="#home" class="logo-text">RAS.</a>
+          <a href="#home" class="logo-text">DREW</a>
         </div>
 
         <ul class="nav-links">
@@ -37,7 +43,11 @@
     <section id="home" class="introsection hidden">
       <div class="main-container">
         <div class="image-wrapper">
-          <img src="ralph.jpg" alt="Ralph Andrew Salvame" class="ralphpic" />
+          <img
+            src="assets/ralph.jpg"
+            alt="Ralph Andrew Salvame"
+            class="ralphpic"
+          />
         </div>
         <div class="maintext">
           <span class="greeting">Hello, I'm</span>
@@ -50,7 +60,7 @@
           </p>
 
           <div class="btn-group">
-            <a href="resume.pdf" target="_blank" class="cta-btn"
+            <a href="assets/resume.pdf" target="_blank" class="cta-btn"
               >Download CV <i class="ri-download-line"></i
             ></a>
             <div class="socials">
@@ -76,96 +86,125 @@
     </section>
 
     <section id="projects" class="content-section section-spacer">
-      <div class="section-container">
+      <div class="section-container main-stack">
         <div class="card education hidden">
-          <h3><i class="ri-graduation-cap-line"></i> Education</h3>
-
-          <div class="card-content mb-4">
-            <img src="citwew.png" alt="CIT-U Logo" class="edu-logo" />
-            <div>
-              <h4>Cebu Institute of Technology - University</h4>
-              <p class="sub-text">BS Computer Science</p>
-            </div>
+          <div class="card-header">
+            <h3><i class="ri-graduation-cap-line"></i> Education</h3>
           </div>
 
-          <div class="card-content">
-            <img src="uspff.png" alt="USPF Logo" class="edu-logo" />
+          <div class="timeline-wrapper">
+            <div class="timeline-line"></div>
 
-            <div>
-              <h4>University of Southern Philippines Foundation</h4>
-              <p class="sub-text">JHS / SHS</p>
+            <div class="timeline-item">
+              <div class="timeline-dot current"></div>
+              <div class="timeline-content">
+                <div class="school-header">
+                  <img src="assets/citwew.png" alt="CIT-U" class="edu-logo" />
+                  <div>
+                    <h4>CIT - University</h4>
+                    <span class="edu-role">BS Computer Science</span>
+                  </div>
+                </div>
+                <span class="edu-year active-year">
+                  <i class="ri-time-line"></i> 2023 - Present
+                </span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="school-header">
+                  <img src="assets/uspff.png" alt="USPF" class="edu-logo" />
+                  <div>
+                    <h4>USPF</h4>
+                    <span class="edu-role">High School</span>
+                  </div>
+                </div>
+                <span class="edu-year">
+                  <i class="ri-calendar-check-line"></i> 2017 - 2023
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="card skills hidden">
-          <h3><i class="ri-code-box-line"></i> Tech Stack</h3>
-          <div class="card-content">
-            <div class="skills-container">
-              <span class="skill-badge"
-                ><i class="ri-code-s-slash-line"></i> C</span
-              >
-              <span class="skill-badge"
-                ><i class="ri-code-s-slash-line"></i> C++</span
-              >
-              <span class="skill-badge"
-                ><i class="ri-terminal-box-line"></i> C#</span
-              >
-              <span class="skill-badge"><i class="ri-java-line"></i> Java</span>
-              <span class="skill-badge"
-                ><i class="ri-code-fill"></i> Python</span
-              >
-              <span class="skill-badge"
-                ><i class="ri-html5-line"></i> HTML</span
-              >
-              <span class="skill-badge"><i class="ri-css3-line"></i> CSS</span>
-              <span class="skill-badge"
-                ><i class="ri-javascript-line"></i> JS</span
-              >
-              <span class="skill-badge"
-                ><i class="ri-reactjs-line"></i> React</span
-              >
-              <span class="skill-badge"
-                ><i class="ri-database-2-line"></i> MySQL</span
-              >
-            </div>
+          <div class="card-header">
+            <h3><i class="ri-code-box-line"></i> Tech Stack</h3>
+          </div>
+          <div class="skills-wrapper">
+            <span class="skill-badge"
+              ><i class="ri-code-s-slash-line"></i> C</span
+            >
+            <span class="skill-badge"
+              ><i class="ri-code-s-slash-line"></i> C++</span
+            >
+            <span class="skill-badge"
+              ><i class="ri-terminal-box-line"></i> C#</span
+            >
+            <span class="skill-badge"><i class="ri-java-line"></i> Java</span>
+            <span class="skill-badge"><i class="ri-code-fill"></i> Python</span>
+            <span class="skill-badge"><i class="ri-html5-line"></i> HTML</span>
+            <span class="skill-badge"><i class="ri-css3-line"></i> CSS</span>
+            <span class="skill-badge"
+              ><i class="ri-javascript-line"></i> JS</span
+            >
+            <span class="skill-badge"
+              ><i class="ri-reactjs-line"></i> React</span
+            >
+            <span class="skill-badge"
+              ><i class="ri-database-2-line"></i> MySQL</span
+            >
           </div>
         </div>
 
-        <div class="card projects hidden">
-          <h3><i class="ri-rocket-line"></i> Recent Projects</h3>
-          <div class="card-content card-no-flex">
-            <div class="project-grid">
-              <a href="#" class="project-item">
-                <div class="proj-icon">
-                  <i class="ri-bar-chart-grouped-line"></i>
-                </div>
-                <div class="proj-info">
-                  <h4>Valorant Data Analysis</h4>
-                  <span class="proj-tag">Streamlit App</span>
-                </div>
-                <i class="ri-arrow-right-up-line external-link-icon"></i>
-              </a>
+        <div class="projects-wrapper hidden">
+          <h3 class="section-title">
+            <i class="ri-user-star-line"></i> Personal Projects
+          </h3>
 
-              <a href="#" class="project-item">
-                <div class="proj-icon">
-                  <i class="ri-shopping-cart-2-line"></i>
+          <div class="project-grid-modern">
+            <div class="project-card">
+              <div class="card-glow"></div>
+              <div class="card-top">
+                <div class="proj-icon-box">
+                  <i class="ri-megaphone-line"></i>
                 </div>
-                <div class="proj-info">
-                  <h4>Unimarket</h4>
-                  <span class="proj-tag">Spring Boot</span>
+                <div class="status-pill">
+                  <div class="dot"></div>
+                  Live
                 </div>
-                <i class="ri-arrow-right-up-line external-link-icon"></i>
-              </a>
+              </div>
 
-              <a href="#" class="project-item">
-                <div class="proj-icon"><i class="ri-brain-line"></i></div>
-                <div class="proj-info">
-                  <h4>Neural Network Logic Gates</h4>
-                  <span class="proj-tag">AI/ML Model</span>
+              <div class="card-mid">
+                <h4>Nice Propaganda</h4>
+                <p class="tech-tag">Promotional Website</p>
+                <p class="proj-desc">
+                  A responsive promotional platform designed for digital
+                  marketing campaigns.
+                </p>
+              </div>
+
+              <div class="card-actions">
+                <a href="#" target="_blank" class="proj-btn outline">
+                  <i class="ri-github-fill"></i> Code
+                </a>
+                <a href="#" target="_blank" class="proj-btn fill">
+                  View <i class="ri-arrow-right-up-line"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card construction-card">
+              <div class="pattern-overlay"></div>
+              <div class="construction-content">
+                <div class="icon-circle">
+                  <i class="ri-hammer-line"></i>
                 </div>
-                <i class="ri-arrow-right-up-line external-link-icon"></i>
-              </a>
+                <h4>Work in Progress</h4>
+                <p class="tech-tag">New ideas brewing...</p>
+              </div>
             </div>
           </div>
         </div>

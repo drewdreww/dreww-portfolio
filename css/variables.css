@@ -1,0 +1,17 @@
+:root {
+  --bg-color: #0a0a0a;
+  --text-color: #ffffff;
+  --accent-color: #888888;
+  --card-bg: #1a1a1a;
+  --border-color: #333;
+  --nav-bg: rgba(10, 10, 10, 0.9);
+}
+
+body.light-mode {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #444444;
+  --card-bg: #f4f4f4;
+  --border-color: #ddd;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+}

@@ -1,0 +1,12 @@
+@media (max-width: 768px) {
+  .maintext h1 {
+    font-size: 2.2rem;
+  }
+  .ralphpic {
+    height: 300px;
+    width: 300px;
+  }
+  .nav-links {
+    display: none;
+  }
+}
