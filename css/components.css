@@ -334,3 +334,36 @@
   margin: 0 auto 15px auto;
   color: var(--accent-color);
 }
+/* --- Tech Stack Styling (Web Icons) --- */
+
+/* --- Tech Stack Styling (SVG) --- */
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.skill-img {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+  /* No filters: Display SVGs in their original color at all times */
+  display: block;
+}
+
+/* Hover Effect: Just a subtle lift, NO color change */
+.skill-badge:hover {
+  background: var(--card-bg);
+  border-color: var(--text-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+}
