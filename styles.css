@@ -1,0 +1,521 @@
+/* --- 1. Variables & Reset --- */
+:root {
+  /* Dark Mode (Default) variables */
+  --bg-color: #0a0a0a;
+  --text-color: #ffffff;
+  --accent-color: #888888; /* Grey accent */
+  --card-bg: #1a1a1a;
+  --border-color: #333;
+  --nav-bg: rgba(10, 10, 10, 0.9);
+}
+
+/* Light Mode variables (Applied via JS) */
+body.light-mode {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #444444;
+  --card-bg: #f4f4f4;
+  --border-color: #ddd;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+}
+
+body {
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  line-height: 1.6;
+}
+
+/* --- 2. Navigation --- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 5%;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo-text {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* Underline animation on hover */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--text-color);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.theme-btn:hover {
+  background-color: var(--border-color);
+}
+
+/* --- 3. Hero Section --- */
+.introsection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10%;
+  padding-top: 80px; /* Offset for fixed nav */
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap-reverse; /* Stacks nicely on mobile */
+  gap: 50px;
+  max-width: 1200px;
+}
+
+.maintext {
+  flex: 1;
+  min-width: 300px;
+}
+
+.greeting {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.maintext h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.maintext h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.maintext p {
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+/* Image Styling */
+.image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Find this section and update it --- */
+.ralphpic {
+  height: 400px;
+  width: 350px;
+  object-fit: cover;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  border: 2px solid var(--text-color);
+  animation: morph 8s ease-in-out infinite;
+  /* DELETED filter: grayscale(100%); here */
+}
+
+/* Blob Animation */
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+/* Social Icons */
+.socials {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+}
+
+/* --- 4. Education & Projects --- */
+.content-section {
+  padding: 50px 10%;
+  margin-bottom: 50px;
+}
+
+.section-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+}
+
+.card h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.citlogo {
+  height: 60px;
+  width: auto;
+}
+
+.project-list {
+  list-style: inside square;
+  color: var(--accent-color);
+}
+/* --- Add these to your styles.css --- */
+
+/* Standardize logo size for education */
+.edu-logo {
+  height: 50px;
+  width: 50px;
+  object-fit: contain; /* Keeps aspect ratio */
+}
+
+/* Styling for the placeholder icon if you don't have a USPF image */
+.logo-placeholder {
+  height: 50px;
+  width: 50px;
+  background-color: var(--border-color);
+  border-radius: 50%; /* Makes it a circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Margin Bottom utility for spacing between schools */
+.mb-4 {
+  margin-bottom: 25px;
+}
+
+/* Sub-text styling (degree/level) */
+.sub-text {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+}
+
+/* --- Tech Stack / Skills Styling --- */
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows badges to flow to the next line */
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.skill-badge {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-color);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 20px; /* Pill shape */
+  cursor: default;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect: Inverts colors for a cool B&W interaction */
+.skill-badge:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--text-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(128, 128, 128, 0.2);
+}
+
+/* --- NEW STYLES AT THE BOTTOM --- */
+
+/* fixes flex alignment issue in the new projects card layout */
+.card-no-flex {
+  display: block;
+}
+
+/* --- Language Badges Icons --- */
+.skill-badge i {
+  margin-right: 8px;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+/* --- New Projects UI --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: var(--bg-color); /* Slightly different bg from card */
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative; /* Needed for the arrow icon positioning */
+}
+
+/* Hover effect for project items */
+.project-item:hover {
+  border-color: var(--text-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.proj-icon {
+  height: 45px;
+  width: 45px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-right: 15px;
+}
+
+.proj-info h4 {
+  color: var(--text-color);
+  margin-bottom: 2px;
+  font-size: 1rem;
+}
+
+.proj-tag {
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  background-color: var(--card-bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+/* The little arrow icon on the right */
+.external-link-icon {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: var(--accent-color);
+  opacity: 0; /* Hidden by default */
+  transition: all 0.3s ease;
+}
+
+/* Show arrow on hover */
+.project-item:hover .external-link-icon {
+  opacity: 1;
+  right: 10px; /* Slight movement */
+}
+
+/* --- Update .introsection (Better Spacing) --- */
+.introsection {
+  min-height: 90vh; /* Changed from 100vh to ensure flow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 10% 50px 10%; /* More top padding */
+}
+
+/* --- ADD THIS: Section Spacer --- */
+.section-spacer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* --- ADD THIS: Download CV Button Styling --- */
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 20px; /* Space between text and button */
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: var(--text-color); /* Inverted colors */
+  color: var(--bg-color);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--text-color);
+}
+
+.cta-btn:hover {
+  background-color: transparent;
+  color: var(--text-color);
+  transform: translateY(-3px);
+}
+
+.cta-btn i {
+  margin-left: 5px;
+  font-weight: normal;
+}
+
+/* --- ADD THIS: Footer Styling --- */
+.footer {
+  padding: 80px 10% 40px 10%;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  margin-top: 50px;
+}
+
+.footer h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  color: var(--accent-color);
+  margin-bottom: 30px;
+}
+
+.email-link {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent-color);
+  transition: color 0.3s;
+}
+
+.email-link:hover {
+  color: var(--accent-color);
+}
+
+.footer-bottom {
+  margin-top: 50px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* --- ADD THIS: Scroll Animation Classes --- */
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(30px); /* Push it down slightly */
+  transition: all 1s ease; /* Smooth transition */
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* Stagger delay for child elements (optional polish) */
+.card:nth-child(2) {
+  transition-delay: 200ms;
+}
+.card:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+/* --- 5. Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .maintext h1 {
+    font-size: 2.2rem;
+  }
+  .ralphpic {
+    height: 300px;
+    width: 300px;
+  }
+  .nav-links {
+    display: none;
+  } /* In a real project, you'd add a hamburger menu here */
+}
